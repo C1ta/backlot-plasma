@@ -43,10 +43,10 @@ do
 	 
     else
       result="failed"
-	  export WEBHOOK_URL="https://discord.com/api/webhooks/819849009552293888/VD4TRkhD6YA4sDLzfVDHThQVzvHlps342thZCqjw_mWvw2tZKKvok4oWsDLC_gpPJRJf"
+	  export WEBHOOK_URL="https://discord.com/api/webhooks/960917228885270618/Ir0l8wuUz8yAU86S_mcg3JVdpYNBvl_wLYIhIL70vS2db0-Rnp5wn33ofDUBEkc3NFa0"
 	  curl \
 	    -H "Content-Type: application/json" \
-	    -d '{"username": "Coop Multiverse", "content": "'${url}' offline"}' \
+	    -d '{"username": "Coop Multiverse", "content": "'${url}' OFFLINE"}' \
 	   $WEBHOOK_URL
     fi
     if [ "$result" = "success" ]; then
