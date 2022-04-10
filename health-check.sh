@@ -37,19 +37,17 @@ do
     response=$(curl --write-out '%{http_code}' --silent --output /dev/null $url)
     if [ "$response" -eq 200 ] || [ "$response" -eq 202 ] || [ "$response" -eq 301 ] || [ "$response" -eq 302 ] || [ "$response" -eq 307 ]; then
       result="success"
-	  curl -H "Content-Type: application/json" -d '{"username": "test", "content": "hello"}' "https://discord.com/api/webhooks/123/w3bh00k_t0k3n"
-	  curl -H "Content-Type: application/json" -d '{"username": "test", "content": "hello"}' "https://discord.com/api/webhooks/123/w3bh00k_t0k3n"
 
-	  # To make command more readable you can split it to multiple lines using backslash `\`
-	  # and set webhook url as variable, so you don't need to paste it over and over again.
-	  # Also you can add the variable to your `.*rc` file, so it persists on console reloads.
+
+	
+	 
+    else
+      result="failed"
 	  export WEBHOOK_URL="https://discord.com/api/webhooks/819849009552293888/VD4TRkhD6YA4sDLzfVDHThQVzvHlps342thZCqjw_mWvw2tZKKvok4oWsDLC_gpPJRJf"
 	  curl \
 	    -H "Content-Type: application/json" \
-	    -d '{"username": "test", "content": "hello"}' \
+	    -d '{"username": "Coop Multiverse", "content": "${url} offline"}' \
 	   $WEBHOOK_URL
-    else
-      result="failed"
     fi
     if [ "$result" = "success" ]; then
       break
